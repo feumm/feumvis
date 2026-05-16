@@ -64,28 +64,29 @@ body { min-height: 100dvh; background: var(--bg); overflow-x: hidden; }
   display: flex;
   align-items: center;
   gap: 0;
-  background: rgba(16, 10, 34, 0.20);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(20, 18, 26, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 9999px;
-  padding: 4px;
+  padding: 5px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   position: relative;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .pill-indicator {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  height: calc(100% - 8px);
-  background: rgba(240, 235, 255, 0.92);
+  top: 5px;
+  left: 5px;
+  height: calc(100% - 10px);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
   pointer-events: none;
   z-index: 0;
   transition: left 0.32s cubic-bezier(0.4, 0, 0.2, 1),
               width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .pill-nav-link {
@@ -93,24 +94,24 @@ body { min-height: 100dvh; background: var(--bg); overflow-x: hidden; }
   z-index: 1;
   display: inline-flex;
   align-items: center;
-  padding: 6px 18px;
+  padding: 12px 32px;
   border-radius: 9999px;
-  color: rgba(250, 250, 250, 0.45);
+  color: rgba(250, 250, 250, 0.60);
   text-decoration: none;
-  font-size: 13.5px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.01em;
   transition: color 0.22s ease;
   white-space: nowrap;
 }
 
 .pill-nav-link:hover {
-  color: rgba(250, 250, 250, 0.8);
+  color: rgba(250, 250, 250, 0.85);
 }
 
 .pill-nav-link.active {
-  color: #110828;
-  font-weight: 800;
+  color: rgba(250, 250, 250, 0.95);
+  font-weight: 700;
 }
 
 .navbar-right { display: flex; justify-content: flex-end; }
@@ -600,7 +601,7 @@ main {
 .inside-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -642,12 +643,12 @@ main {
   z-index: 30;
   border-radius: 13px;
   overflow: hidden;
-  max-height: 108px;
-  background: rgba(13, 9, 28, 0.90);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(160, 100, 255, 0.14);
-  box-shadow: 0 4px 28px rgba(60, 20, 140, 0.22);
+  max-height: 160px;
+  background: rgba(20, 18, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   opacity: 0;
   transform: translateY(-4px);
   pointer-events: none;
@@ -665,49 +666,56 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 52px;
-  background: linear-gradient(to top, rgba(13, 9, 28, 1) 0%, rgba(13, 9, 28, 0.55) 60%, transparent 100%);
+  height: 40px;
+  background: linear-gradient(to top, rgba(20, 18, 26, 1) 0%, rgba(20, 18, 26, 0.5) 60%, transparent 100%);
   pointer-events: none;
   z-index: 10;
 }
 
 .fi-hover-list {
-  padding: 6px 0 5px;
+  padding: 8px 0 6px;
 }
 
 .fi-hover-item {
   display: flex;
   align-items: center;
-  padding: 4px 14px 4px 18px;
-  font-size: 11.5px;
-  color: rgba(250, 250, 250, 0.68);
+  padding: 5px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(250, 250, 250, 0.70);
   letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   cursor: default;
+  transition: color 0.15s ease;
+}
+
+.fi-hover-item:hover {
+  color: rgba(250, 250, 250, 0.95);
 }
 
 .fi-hover-item svg {
   display: none;
 }
 
-/* ── LIQUID GLASS FOLDER ITEMS ── */
+/* ── PILL FOLDER ITEMS ── */
 .folder-item {
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 9999px;
   cursor: default;
   opacity: 0;
   transform: translateY(18px);
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: rgba(20, 18, 26, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.6),
               box-shadow 0.3s ease,
+              border-color 0.3s ease,
               opacity 0.45s ease;
 }
 
@@ -717,54 +725,22 @@ main {
 }
 
 .folder-item:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(160, 100, 255, 0.22);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.20);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .fi-glass-filter,
 .fi-glass-overlay,
 .fi-glass-specular {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.fi-glass-filter {
-  z-index: 0;
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  filter: url(#lensFilter) brightness(1.06);
-}
-
-.fi-glass-overlay {
-  z-index: 1;
-  background: linear-gradient(
-    135deg,
-    rgba(140, 80, 255, 0.10) 0%,
-    rgba(255, 255, 255, 0.04) 50%,
-    rgba(80, 30, 160, 0.08) 100%
-  );
-}
-
-.fi-glass-specular {
-  z-index: 2;
-  box-shadow:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.18),
-    inset 1px 0   0 rgba(255, 255, 255, 0.06),
-    inset 0   0 12px rgba(160, 110, 255, 0.05),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.15);
+  display: none;
 }
 
 .fi-glass-content {
-  position: relative;
-  z-index: 3;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: 10px;
+  padding: 16px 24px;
   width: 100%;
 }
 
@@ -789,10 +765,10 @@ main {
 
 .folder-name {
   flex: 1;
-  font-size: 13.5px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 700;
   letter-spacing: -0.01em;
-  color: rgba(250,250,250,0.82);
+  color: rgba(250,250,250,0.85);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
