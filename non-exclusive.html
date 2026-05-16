@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Non Exclusive — feum visuals</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="nonexclusive-page">
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="navbar-logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="feum" /></a>
+    </div>
+    <div class="navbar-center">
+      <nav class="pill-nav">
+        <span class="pill-indicator"></span>
+        <a href="index.html" class="pill-nav-link">Home</a>
+        <a href="exclusive.html" class="pill-nav-link">Exclusive</a>
+        <a href="non-exclusive.html" class="pill-nav-link active">Non-Exclusive</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <a href="https://feumm.github.io/feum/" target="_blank" rel="noopener noreferrer" class="portfolio-btn">Portfolio</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Available to everyone.</h1>
+      <p class="page-desc">PSD thumbnail templates built for creators — buy once, own it forever.</p>
+    </div>
+    <div class="word-cycle">
+      <span class="word-cycle-text">NON-EXCLUSIVE</span>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="sort-wrap">
+      <button class="sort-btn" id="sortBtn" type="button">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span id="sortLabel">Price</span>
+        <svg class="sort-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="sort-menu" id="sortMenu">
+        <span class="sort-label-heading">Sort by price</span>
+        <button class="sort-option active" data-sort="default" type="button">Default</button>
+        <button class="sort-option" data-sort="asc" type="button">Low to High</button>
+        <button class="sort-option" data-sort="desc" type="button">High to Low</button>
+      </div>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" data-view="grid" type="button" title="Grid view">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor"/></svg>
+      </button>
+      <button class="view-btn" data-view="list" type="button" title="List view">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><rect x="1" y="2" width="14" height="3.5" rx="1.5" fill="currentColor"/><rect x="1" y="6.5" width="14" height="3" rx="1.5" fill="currentColor" opacity="0.5"/><rect x="1" y="10.5" width="14" height="3.5" rx="1.5" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <div class="card-wrap" data-price="10">
+      <a href="https://feum.gumroad.com/l/ausvb" target="_blank" rel="noopener noreferrer" class="product-card">
+        <div class="card-media">
+          <img src="assets/images/stier_cover.png" alt="S-TIER pack cover" />
+          <div class="card-gradient"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">S-TIER</div>
+          <div class="card-price">$10</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap" data-price="10">
+      <a href="https://feum.gumroad.com/l/admekv" target="_blank" rel="noopener noreferrer" class="product-card">
+        <div class="card-media">
+          <img src="assets/images/tuffest_cover.png" alt="Tuffest pack cover" />
+          <div class="card-gradient"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Tuffest</div>
+          <div class="card-price">$10</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap" data-price="8">
+      <a href="https://feum.gumroad.com/l/kdvmwi" target="_blank" rel="noopener noreferrer" class="product-card">
+        <div class="card-media">
+          <img src="assets/images/realistic_cover.png" alt="Realistic Terrain pack cover" />
+          <div class="card-gradient"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Realistic Terrain</div>
+          <div class="card-price">$8</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap" data-price="8">
+      <a href="https://feum.gumroad.com/l/qsnnk" target="_blank" rel="noopener noreferrer" class="product-card">
+        <div class="card-media">
+          <img src="assets/images/samurai_cover.png" alt="Samurai pack cover" />
+          <div class="card-gradient"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Samurai</div>
+          <div class="card-price">$8</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap" data-price="8">
+      <a href="https://feum.gumroad.com/l/cxplvw" target="_blank" rel="noopener noreferrer" class="product-card">
+        <div class="card-media">
+          <img src="assets/images/egypt_cover.png" alt="Egypt pack cover" style="object-position: center top;" />
+          <div class="card-gradient"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">Egypt</div>
+          <div class="card-price">$8</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
