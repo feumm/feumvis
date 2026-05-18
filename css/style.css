@@ -61,7 +61,7 @@ body { min-height: 100dvh; background: var(--bg); overflow-x: hidden; }
   display: flex;
   align-items: center;
   gap: 0;
-  background: rgba(20, 18, 26, 0.80);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 9999px;
   padding: 5px;
