@@ -188,7 +188,7 @@ main {
   position: relative;
   z-index: 1;
   display: block;
-  border-radius: 52px;
+  border-radius: 25px;
   overflow: hidden;
   background: transparent;
   border: 1px solid var(--border);
