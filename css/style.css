@@ -265,7 +265,7 @@ main {
 }
 .card-price {
   flex-shrink: 0;
-  color: #fff;
+  color: #000;
   font-size: 13px;
   font-weight: 800;
   padding: 6px 14px;
@@ -884,8 +884,8 @@ main {
 .mc-card {
   flex-shrink: 0;
   width: 380px;
-  background: rgba(14, 9, 28, 0.56);
-  border: 1px solid rgba(160, 100, 255, 0.18);
+  background: rgba(14, 9, 28, 0.28);
+  border: 1px solid rgba(160, 100, 255, 0.12);
   border-radius: 30px;
   padding: 20px 22px;
   display: flex;
