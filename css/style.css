@@ -253,7 +253,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: rgba(9, 9, 11, 0.08);
+  background: rgba(9, 9, 11, 0.86);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -273,7 +273,7 @@ main {
   border-radius: 9999px;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 5);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
