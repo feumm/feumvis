@@ -253,8 +253,8 @@ main {
   justify-content: space-between;
   gap: 16px;
   background: rgba(9, 9, 11, 0.32);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(34px);
+  -webkit-backdrop-filter: blur(34px);
 }
 .card-title {
   font-size: 20px;
