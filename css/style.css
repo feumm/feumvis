@@ -188,7 +188,7 @@ main {
   position: relative;
   z-index: 1;
   display: block;
-  border-radius: 16px;
+  border-radius: 32px;
   overflow: hidden;
   background: transparent;
   border: 1px solid var(--border);
@@ -253,7 +253,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: rgba(9, 9, 11, 10);
+  background: rgba(9, 9, 11, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -266,7 +266,7 @@ main {
 }
 .card-price {
   flex-shrink: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.08);
   color: #000;
   font-size: 13px;
   font-weight: 800;
@@ -274,6 +274,8 @@ main {
   border-radius: 9999px;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 /* ── HERO CARD (home page) ── */
