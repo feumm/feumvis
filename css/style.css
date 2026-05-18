@@ -431,7 +431,7 @@ main {
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(160,100,255,0.14);
   border-radius: 22px;
-  box-shadow: 0 4px 32px rgba(80,30,180,0.22);
+  box-shadow: 0 4px 32px rgba(255, 255, 255, 0.22);
   padding: 5px;
   opacity: 0;
   pointer-events: none;
