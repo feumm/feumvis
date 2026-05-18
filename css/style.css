@@ -410,7 +410,7 @@ main {
   cursor: pointer;
   padding: 7px 13px;
   border-radius: 18px;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: background 0.4s, border-color 0.4s, color 0.4s;
   letter-spacing: -0.01em;
   font-family: inherit;
 }
@@ -427,7 +427,7 @@ main {
   top: calc(100% + 8px);
   left: 0;
   min-width: 168px;
-  background: rgba(13,9,28,0.88);
+  background: rgba(13,9,28,0.28);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(160,100,255,0.14);
