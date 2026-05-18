@@ -188,13 +188,13 @@ main {
   position: relative;
   z-index: 1;
   display: block;
-  border-radius: 32px;
+  border-radius: 52px;
   overflow: hidden;
   background: transparent;
   border: 1px solid var(--border);
   text-decoration: none;
   box-shadow: 0 0 30px rgba(160,110,210,0.08), 0 0 60px rgba(140,90,190,0.05);
-  transition: border-color 0.5s ease;
+  transition: border-color 0.8s ease;
 }
 .product-card:hover { border-color: var(--border-hover); }
 
@@ -266,7 +266,6 @@ main {
 }
 .card-price {
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.08);
   color: #000;
   font-size: 13px;
   font-weight: 800;
@@ -274,6 +273,7 @@ main {
   border-radius: 9999px;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
