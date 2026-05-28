@@ -217,16 +217,18 @@ if (folderItems.length) {
       }
 
       try {
-        // Fetch the Gumroad page directly using a CORS proxy if needed, 
-        // or directly if Gumroad's headers allow it.
-        const res = await fetch(url);
-        if (res.ok) {
-          const html = await res.text();
-          
-          // Gumroad sets specific indicator strings or button states when sold out
-          const isSoldOut = html.includes('Sold out') || 
-                            html.includes('is no longer available') || 
-                            html.includes('data-custom-delivery-text="Sold out"');
+  // Use AllOrigins proxy to bypass the CORS block
+  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+  const res = await fetch(proxyUrl);
+  
+  if (res.ok) {
+    const data = await res.json();
+    const html = data.contents; // AllOrigins wraps the page HTML inside 'contents'
+    
+    // Gumroad sets specific indicator strings or button states when sold out
+    const isSoldOut = html.includes('Sold out') || 
+                      html.includes('is no longer available') || 
+                      html.includes('data-custom-delivery-text="Sold out"');
 
           if (isSoldOut) {
             card.classList.add('sold-out');
@@ -250,12 +252,16 @@ if (folderItems.length) {
       url = url.split('?')[0];
 
       try {
-        const res = await fetch(url);
-        if (res.ok) {
-          const html = await res.text();
-          const isSoldOut = html.includes('Sold out') || 
-                            html.includes('is no longer available') || 
-                            html.includes('data-custom-delivery-text="Sold out"');
+  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+  const res = await fetch(proxyUrl);
+  
+  if (res.ok) {
+    const data = await res.json();
+    const html = data.contents;
+    
+    const isSoldOut = html.includes('Sold out') || 
+                      html.includes('is no longer available') || 
+                      html.includes('data-custom-delivery-text="Sold out"');
 
           if (isSoldOut) {
             btn.classList.add('sold-out-cta');
