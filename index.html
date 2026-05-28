@@ -4,13 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>feumvis</title>
+  
+  <!-- SEO & Search Engine Meta Tags -->
+  <meta name="description" content="feum official store" />
+  <meta name="keywords" content="feum, feumvis, minecraft graphics, minecraft thumbnails, cinema 4d minecraft, blender minecraft rigs, minecraft lightroom, minecraft cc, minecraft designer, thumbnail assets" />
+  <meta name="author" content="feum" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://feumm.github.io/feumvis" />
+  <meta property="og:title" content="feumvis" />
+  <meta property="og:description" content="feum official store" />
+  <meta property="og:image" content="https://feumvis.com/assets/opengraph.jpg" />
+  <meta property="og:image:alt" content="feumvis Ultimate graphics package banner" />
+  <meta property="og:site_name" content="feumvis" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="feumvis" />
+  <meta name="twitter:description" content="feum official store" />
+  <meta name="twitter:image" content="https://feumm.github.io/feumvis/opengraph.jpg" />
+  <meta name="twitter:image:alt" content="" />
+
+  <!-- Discord & Messaging App Theme Color -->
+  <meta name="theme-color" content="#18181b" />
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+<div class="ambient-bg-container" aria-hidden="true">
+  <div class="ambient-sphere ambient-sphere-1"></div>
+  <div class="ambient-sphere ambient-sphere-2"></div>
+  <div class="ambient-sphere ambient-sphere-3"></div>
+</div>
 
 <nav class="navbar">
   <div class="navbar-inner">
@@ -26,13 +57,35 @@
       </nav>
     </div>
     <div class="navbar-right">
-      <a href="https://feumm.github.io/feum/" target="_blank" rel="noopener noreferrer" class="portfolio-btn">Portfolio</a>
+      <a href="https://feumm.github.io/feumvis/" target="_blank" rel="noopener noreferrer" class="portfolio-btn">Portfolio</a>
     </div>
   </div>
 </nav>
 
 <main>
-  <div class="hero-wrap card-wrap" style="position:relative;">
+  <!-- Landing Hero Section -->
+  <section class="landing-hero animate-fade-in">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Fully Customizable <br class="hero-mobile-br" />
+        <span class="hero-word-group">
+          <span class="hero-word-box" id="heroWordBox">
+            <span class="hero-word-inner" id="heroWordInner">
+              <span class="hero-word-item active">Graphics</span>
+            </span>
+          </span>
+          In Seconds
+        </span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Ultimate feum assets, Photoshop, Premiere Pro and fully customizable design templates to take your Minecraft Brand to the peak.
+      </p>
+    </div>
+  </section>
+
+  <div class="hero-wrap card-wrap" id="featured-product" style="position:relative; margin-top: 48px;">
     <a href="https://feum.gumroad.com/l/dmpcz" target="_blank" rel="noopener noreferrer" class="product-card">
       <div class="card-media">
         <img src="assets/product-cover.png" alt="Ultimate feum cover" />
@@ -444,7 +497,7 @@
 
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
   <defs>
-    <linearGradient id="starGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe04d"/><stop offset="100%" stop-color="#c07800"/></linearGradient>
+    <linearGradient id="starGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#a1a1aa"/></linearGradient>
     <filter id="lensFilter" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
       <feTurbulence type="fractalNoise" baseFrequency="0.9 0.85" numOctaves="3" seed="8" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
