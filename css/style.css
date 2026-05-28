@@ -610,7 +610,12 @@ main {
   font-size: 52px;
   font-weight: 900;
   letter-spacing: -0.02em;
-  background: linear-gradient(to right, #1a0040 0%, #5a20b0 30%, #9b5ff5 55%, #6b2fcc 80%, #2a0060 100%);
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #e4e4e7 50%,
+    #a1a1aa 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
