@@ -1,0 +1,19 @@
+{
+  "name": "feum visuals",
+  "short_name": "feumvis",
+  "description": "Premium Minecraft graphics and thumbnail templates by feum.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

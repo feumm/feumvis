@@ -308,16 +308,25 @@ main {
 }
 .card-price {
   flex-shrink: 0;
-  color: #000;
+  color: rgba(255, 255, 255, 0.92);
   font-size: 13px;
   font-weight: 800;
   padding: 6px 14px;
   border-radius: 9999px;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  background: rgba(255, 255, 255, 0.90);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover .card-price {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 /* ── HERO CARD (home page) ── */
@@ -382,43 +391,18 @@ main {
 
 .word-cycle-text {
   display: block;
-  font-size: 30px;
+  font-size: 58px;
   font-weight: 900;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.04em;
   font-style: italic;
-  transition: opacity 0.8s ease;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 45%, #cbd5e1 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: textShine 6s ease-in-out infinite alternate;
-}
-
-.exclusive-page .word-cycle-text {
-  background-image: linear-gradient(
-    to right,
-    #ffffff 0%,
-    #e4e4e7 50%,
-    #a1a1aa 100%
-  );
-}
-
-.nonexclusive-page .word-cycle-text {
-  background-image: linear-gradient(
-    to right,
-    #a1a1aa 0%,
-    #ffffff 50%,
-    #e4e4e7 100%
-  );
-}
-
-.word-cycle-text.fade-out {
-  opacity: 0;
-}
-
-.word-cycle-text.fade-in {
-  opacity: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.1));
+  opacity: 1;
+  transition: opacity 0.6s ease;
 }
 
 .word-cycle-text.fade-out {
@@ -610,7 +594,12 @@ main {
   font-size: 52px;
   font-weight: 900;
   letter-spacing: -0.02em;
-  background: linear-gradient(to right, #1a0040 0%, #5a20b0 30%, #9b5ff5 55%, #6b2fcc 80%, #2a0060 100%);
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #e4e4e7 50%,
+    #a1a1aa 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -759,10 +748,13 @@ main {
   cursor: default;
   opacity: 0;
   transform: translateY(18px);
-  background: rgba(12, 12, 14, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.6),
+              background 0.3s ease,
               box-shadow 0.3s ease,
               border-color 0.3s ease,
               opacity 0.45s ease;
@@ -775,8 +767,9 @@ main {
 
 .folder-item:hover {
   transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.10);
   border-color: rgba(255, 255, 255, 0.20);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.10);
 }
 
 .fi-glass-filter,
@@ -942,19 +935,25 @@ main {
 .mc-card {
   flex-shrink: 0;
   width: 380px;
-  background: rgba(17, 17, 19, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 30px;
   padding: 20px 22px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   box-shadow:
-    0 4px 28px rgba(0, 0, 0, 0.45),
-    0 0 16px rgba(255, 255, 255, 0.01),
-    inset 0 1px 0 rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+    0 4px 28px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mc-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .mc-top {
@@ -1288,9 +1287,9 @@ main {
 }
 
 .sold-out-badge {
-  background: rgba(220, 38, 38, 0.2); /* transparent rich red */
-  border: 1.5px solid rgba(239, 68, 68, 0.6);
-  color: #ffffff;
+  background: rgba(220, 38, 38, 0.10);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  color: rgba(255, 255, 255, 0.92);
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: italic;
   font-weight: 800;
@@ -1299,19 +1298,16 @@ main {
   letter-spacing: 0.12em;
   padding: 8px 18px;
   border-radius: 9999px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 18px rgba(220, 38, 38, 0.35);
-  transform: scale(0.9);
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.32s ease,
-              box-shadow 0.32s ease;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 2px 12px rgba(220, 38, 38, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card.sold-out:hover .sold-out-badge {
-  transform: scale(1);
-  background: rgba(220, 38, 38, 0.3);
-  box-shadow: 0 4px 22px rgba(220, 38, 38, 0.55);
+  background: rgba(220, 38, 38, 0.18);
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .product-card.sold-out .card-media img {
@@ -1320,30 +1316,9 @@ main {
 }
 
 .product-card.sold-out .card-price {
-  color: rgba(255, 255, 255, 0.3) !important;
-  text-decoration: line-through;
-  font-size: 14px;
+  display: none;
 }
 
-.product-card.sold-out .card-info {
-  position: relative;
-}
-
-.product-card.sold-out .card-info::after {
-  content: "SOLD OUT";
-  font-size: 10px;
-  font-weight: 800;
-  color: #ef4444; /* red-500 */
-  border: 1.2px solid rgba(239, 68, 68, 0.5);
-  padding: 2.5px 9px;
-  border-radius: 9999px;
-  background: rgba(239, 68, 68, 0.12);
-  letter-spacing: 0.06em;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  margin-left: auto;
-  align-self: center;
-}
 
 /* ── LANDING HERO SECTION ── */
 .landing-hero {
@@ -1723,7 +1698,7 @@ main {
     text-align: left !important;
   }
   .word-cycle-text {
-    font-size: 24px !important;
+    font-size: 36px !important;
   }
 
   /* What's Inside section */

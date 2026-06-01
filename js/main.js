@@ -195,16 +195,24 @@ if (folderItems.length) {
   folderItems.forEach(item => observer.observe(item));
 }
 
-// ── GUMROAD AUTOMATIC SOLD OUT CHECKER ──
+// ── STOCK CHECKER (via own API — no CORS issues) ──
 (function () {
-  const checkGumroadStock = async () => {
-    // 1. Process Product Cards
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach(async (card) => {
-      const url = card.href;
-      if (!url || !url.includes('gumroad.com')) return;
+  function extractGumroadId(url) {
+    if (!url || !url.includes('gumroad.com')) return null;
+    const clean = url.split('?')[0].replace(/\/$/, '');
+    return clean.split('/').pop() || null;
+  }
 
-      // Inject the overlay markup structure so it is ready to transition smoothly
+  function applySoldOut(card, isCtaBtn) {
+    if (isCtaBtn) {
+      card.classList.add('sold-out-cta');
+      card.style.background = '#3f3f46';
+      card.style.color = '#a1a1aa';
+      card.style.cursor = 'not-allowed';
+      card.textContent = 'SOLD OUT';
+      card.addEventListener('click', (e) => e.preventDefault(), { once: true });
+    } else {
+      card.classList.add('sold-out');
       const mediaContainer = card.querySelector('.card-media');
       if (mediaContainer && !mediaContainer.querySelector('.sold-out-overlay')) {
         const overlay = document.createElement('div');
@@ -212,59 +220,39 @@ if (folderItems.length) {
         overlay.innerHTML = '<span class="sold-out-badge">SOLD OUT</span>';
         mediaContainer.appendChild(overlay);
       }
+      card.addEventListener('click', (e) => e.preventDefault(), { once: true });
+    }
+  }
 
-      try {
-        const res = await fetch(`/api/check-sold-out?url=${encodeURIComponent(url)}`);
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.soldOut) {
-            card.classList.add('sold-out');
-            
-            // Disable actual click or handle it
-            card.addEventListener('click', (e) => {
-              e.preventDefault();
-              alert("Sorry! This exclusive package is already sold out.");
-            });
-          }
-        }
-      } catch (err) {
-        console.warn('Could not check stock status for link:', url, err);
-      }
+  const checkStock = async () => {
+    let stockMap;
+    try {
+      const res = await fetch('/api/products/stock');
+      if (!res.ok) return;
+      stockMap = await res.json();
+    } catch (err) {
+      return;
+    }
+
+    document.querySelectorAll('.product-card').forEach((card) => {
+      const id = extractGumroadId(card.href);
+      if (!id) return;
+      const entry = stockMap[id];
+      if (entry && entry.soldOut) applySoldOut(card, false);
     });
 
-    // 2. Process Sticky CTA Buttons
-    const stickyCtas = document.querySelectorAll('.sticky-cta-btn');
-    stickyCtas.forEach(async (btn) => {
-      const url = btn.href;
-      if (!url || !url.includes('gumroad.com')) return;
-
-      try {
-        const res = await fetch(`/api/check-sold-out?url=${encodeURIComponent(url)}`);
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.soldOut) {
-            btn.classList.add('sold-out-cta');
-            btn.style.background = '#3f3f46';
-            btn.style.color = '#a1a1aa';
-            btn.style.cursor = 'not-allowed';
-            btn.textContent = 'SOLD OUT';
-            btn.addEventListener('click', (e) => {
-              e.preventDefault();
-              alert("Sorry! This product is already sold out.");
-            });
-          }
-        }
-      } catch (err) {
-        console.warn('Could not check stock status for sticky CTA:', url, err);
-      }
+    document.querySelectorAll('.sticky-cta-btn').forEach((btn) => {
+      const id = extractGumroadId(btn.href);
+      if (!id) return;
+      const entry = stockMap[id];
+      if (entry && entry.soldOut) applySoldOut(btn, true);
     });
   };
 
-  // Run on load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkGumroadStock);
+    document.addEventListener('DOMContentLoaded', checkStock);
   } else {
-    checkGumroadStock();
+    checkStock();
   }
 })();
 
@@ -334,5 +322,6 @@ if (folderItems.length) {
     }
   }, 2300);
 })();
+
 
 

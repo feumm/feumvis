@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion & Animation — feum visuals</title>
+  <meta name="description" content="Motion graphics and animation products by feum visuals. Coming soon." />
+  <meta name="theme-color" content="#18181b" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="feumvis" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .motion-hero {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      position: relative;
+    }
+
+    .motion-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .motion-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50%       { opacity: 0.9;  transform: scale(1.3); }
+    }
+
+    .motion-title {
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      animation: fadeUp 0.7s ease 0.08s both;
+    }
+
+    .motion-title-main {
+      color: #ffffff;
+      display: block;
+    }
+
+    .motion-title-word {
+      display: block;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 45%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: italic;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)) drop-shadow(0 0 1px rgba(255,255,255,0.1));
+    }
+
+    .motion-desc {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.65;
+      max-width: 440px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s ease 0.16s both;
+    }
+
+    .motion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 14px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: -0.01em;
+      animation: fadeUp 0.7s ease 0.24s both;
+    }
+
+    .motion-badge svg {
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      .motion-title { font-size: 44px; }
+    }
+  </style>
+</head>
+<body class="motion-page">
+
+<div class="ambient-bg-container" aria-hidden="true">
+  <div class="ambient-sphere ambient-sphere-1"></div>
+  <div class="ambient-sphere ambient-sphere-2"></div>
+  <div class="ambient-sphere ambient-sphere-3"></div>
+</div>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="navbar-logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="feum" /></a>
+    </div>
+    <div class="navbar-center">
+      <nav class="pill-nav">
+        <span class="pill-indicator"></span>
+        <a href="index.html" class="pill-nav-link">Home</a>
+        <a href="exclusive.html" class="pill-nav-link">Exclusive</a>
+        <a href="non-exclusive.html" class="pill-nav-link">Non-Exclusive</a>
+        <a href="motion.html" class="pill-nav-link active">Motion</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <a href="https://feumm.github.io/feum/" target="_blank" rel="noopener noreferrer" class="portfolio-btn">Portfolio</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="motion-hero">
+    <div class="motion-eyebrow">
+      <span class="motion-eyebrow-dot"></span>
+      Coming Soon
+    </div>
+
+    <h1 class="motion-title">
+      <span class="motion-title-main">Animation &</span>
+      <span class="motion-title-word">Motion</span>
+    </h1>
+
+    <p class="motion-desc">
+      Motion graphics, animated overlays, and premium video assets for Minecraft creators. Something's in the works.
+    </p>
+
+    <div class="motion-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+      Dropping soon — stay tuned
+    </div>
+  </section>
+</main>
+
+<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+</body>
+</html>

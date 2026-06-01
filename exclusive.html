@@ -30,6 +30,12 @@
   <meta name="theme-color" content="#18181b" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="feumvis" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
@@ -54,6 +60,7 @@
         <a href="index.html" class="pill-nav-link">Home</a>
         <a href="exclusive.html" class="pill-nav-link active">Exclusive</a>
         <a href="non-exclusive.html" class="pill-nav-link">Non-Exclusive</a>
+        <a href="motion.html" class="pill-nav-link">Motion</a>
       </nav>
     </div>
     <div class="navbar-right">
@@ -151,8 +158,8 @@
       </a>
     </div>
 
-    <div class="card-wrap red" data-price="30">
-      <a href="https://feum.gumroad.com/l/kkgmw" target="_blank" rel="noopener noreferrer" class="product-card">
+   <div class="card-wrap red" data-price="30">
+     <a href="https://feum.gumroad.com/l/kkgmw" target="_blank" rel="noopener noreferrer" class="product-card">
         <div class="card-media">
           <img src="assets/images/Shapeshift.png" alt="Shapeshift exclusive pack cover" />
           <div class="card-gradient"></div>
@@ -298,5 +305,6 @@
 </main>
 
 <script src="js/main.js"></script>
+<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
 </body>
 </html>
