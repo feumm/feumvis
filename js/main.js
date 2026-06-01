@@ -201,11 +201,8 @@ if (folderItems.length) {
     // 1. Process Product Cards
     const productCards = document.querySelectorAll('.product-card');
     productCards.forEach(async (card) => {
-      let url = card.href;
+      const url = card.href;
       if (!url || !url.includes('gumroad.com')) return;
-
-      // Clean the URL (remove tracking/variants)
-      url = url.split('?')[0];
 
       // Inject the overlay markup structure so it is ready to transition smoothly
       const mediaContainer = card.querySelector('.card-media');
@@ -217,21 +214,13 @@ if (folderItems.length) {
       }
 
       try {
-  // Use AllOrigins proxy to bypass the CORS block
-  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-  const res = await fetch(proxyUrl);
-  
-  if (res.ok) {
-    const data = await res.json();
-    const html = data.contents; // AllOrigins wraps the page HTML inside 'contents'
-    
-    // Gumroad sets specific indicator strings or button states when sold out
-    const isSoldOut = html.includes('Sold out') || 
-                      html.includes('is no longer available') || 
-                      html.includes('data-custom-delivery-text="Sold out"');
-
-          if (isSoldOut) {
+        const res = await fetch(`/api/check-sold-out?url=${encodeURIComponent(url)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.soldOut) {
             card.classList.add('sold-out');
+            
+            // Disable actual click or handle it
             card.addEventListener('click', (e) => {
               e.preventDefault();
               alert("Sorry! This exclusive package is already sold out.");
@@ -246,24 +235,14 @@ if (folderItems.length) {
     // 2. Process Sticky CTA Buttons
     const stickyCtas = document.querySelectorAll('.sticky-cta-btn');
     stickyCtas.forEach(async (btn) => {
-      let url = btn.href;
+      const url = btn.href;
       if (!url || !url.includes('gumroad.com')) return;
-      
-      url = url.split('?')[0];
 
       try {
-  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-  const res = await fetch(proxyUrl);
-  
-  if (res.ok) {
-    const data = await res.json();
-    const html = data.contents;
-    
-    const isSoldOut = html.includes('Sold out') || 
-                      html.includes('is no longer available') || 
-                      html.includes('data-custom-delivery-text="Sold out"');
-
-          if (isSoldOut) {
+        const res = await fetch(`/api/check-sold-out?url=${encodeURIComponent(url)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.soldOut) {
             btn.classList.add('sold-out-cta');
             btn.style.background = '#3f3f46';
             btn.style.color = '#a1a1aa';
@@ -355,6 +334,5 @@ if (folderItems.length) {
     }
   }, 2300);
 })();
-
 
 
