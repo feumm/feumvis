@@ -329,6 +329,40 @@ main {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
+/* Position the badge inside the media container */
+.card-media {
+  position: relative; /* Ensures the badge stays inside the image area */
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ef4444; /* Solid red color */
+  color: #ffffff;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+/* Optional: Dim the product card and disable clicking for sold out items */
+.card-wrap.sold-out {
+  pointer-events: none; /* Prevents clicking the Gumroad link */
+}
+
+.card-wrap.sold-out .card-media img {
+  filter: grayscale(100%) brightness(60%); /* Makes the image black & white and darker */
+}
+
+.card-wrap.sold-out .card-info {
+  opacity: 0.5; /* Fades the text and price */
+}
+
 /* ── HERO CARD (home page) ── */
 .hero-wrap {
   animation: fadeUp 0.9s ease both;
